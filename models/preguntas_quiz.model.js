@@ -14,23 +14,19 @@ module.exports = (sequelize, Sequelize) => {
             },
             pregunta: {
                 type: DataTypes.STRING(500),
-                allowNull: false,
-                unique: true
+                allowNull: false
             },
             respuesta1: {
                 type: DataTypes.STRING(500),
-                allowNull: false,
-                unique: true
+                allowNull: false
             },
             respuesta2: {
                 type: DataTypes.STRING(500),
-                allowNull: false,
-                unique: true
+                allowNull: false
             },
             respuestaCorrecta: {
                 type: DataTypes.STRING(500),
-                allowNull: false,
-                unique: true
+                allowNull: false
             }
         },
         {
