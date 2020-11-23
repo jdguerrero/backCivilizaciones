@@ -147,7 +147,7 @@ async function getPreguntaQuizByBancoID(req, res){
 
         const {idBancoPreguntas} = req.params;
 
-        const pregunta = await dbManager.PreguntaQuiz.findOne(
+        const pregunta = await dbManager.PreguntaQuiz.findAll(
             {
                 where: {
                     idBancoPreguntas: idBancoPreguntas
