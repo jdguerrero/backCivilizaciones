@@ -141,6 +141,29 @@ async function getPreguntaQuizById(req, res){
     }
 }
 
+async function getPreguntaQuizByBancoID(req, res){
+
+    try {
+
+        const {idBancoPreguntas} = req.params;
+
+        const pregunta = await dbManager.PreguntaQuiz.findOne(
+            {
+                where: {
+                    idBancoPreguntas: idBancoPreguntas
+                }
+            }
+        );
+        res.json(pregunta);
+    } catch (error) {
+        res.status(500).send(
+            {
+                message: "Error en servidor al buscar pregunta quiz"
+            }
+        );
+    }
+}
+
 
 /**
  * Elimina una pregunta de quiz por su id
@@ -202,3 +225,5 @@ exports.getPreguntasQuiz = getPreguntasQuiz;
 exports.getPreguntaQuizById = getPreguntaQuizById;
 
 exports.eliminarPreguntaQuizById = eliminarPreguntaQuizById;
+
+exports.getPreguntaQuizByBancoID = getPreguntaQuizByBancoID;

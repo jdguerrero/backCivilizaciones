@@ -18,6 +18,9 @@ router.get('/', preguntaQuizController.getPreguntasQuiz);
 
 router.get('/:idPreguntaQuiz', preguntaQuizController.getPreguntaQuizById);
 
+router.get('/byBanco/:idBancoPreguntas', preguntaQuizController.getPreguntaQuizByBancoID);
+
 router.delete('/:idPreguntaQuiz', preguntaQuizController.eliminarPreguntaQuizById);
+
 
 module.exports = router;
